@@ -8,6 +8,8 @@ public class AppContas {
         int opcao, numeroConta;
         double limite, valor;
 
+        GerenciaContas contas = new GerenciaContas();
+
         do {
             System.out.println("1 - nova conta corrente");
             System.out.println("2 - nova conta especial");
@@ -19,27 +21,22 @@ public class AppContas {
             System.out.print("Opção ==> ");
             opcao = teclado.nextInt();
 
-            GerenciaContas contas = new GerenciaContas();
-
             switch (opcao) {
                 case 1:   
-                    System.out.println("Informe o número da conta:");
-                    numeroConta = teclado.nextInt();
-                    contas.novaContaCorrente(numeroConta);
+                    numeroConta = contas.novaContaCorrente();
+                    System.out.println("Nova conta corrente criada: " + numeroConta);
 
                     break;
                 case 2:   
-                    System.out.println("Informe o número da conta:");
-                    numeroConta = teclado.nextInt();
                     System.out.println("Informe o limite da conta:");
                     limite = teclado.nextDouble();
-                    contas.novaContaEspecial(numeroConta, limite);
+                    numeroConta = contas.novaContaEspecial(limite);
+                    System.out.println("Nova conta especial criada: " + numeroConta);
 
                     break;
                 case 3:   
-                    System.out.println("Informe o número da conta:");
-                    numeroConta = teclado.nextInt();
-                    contas.novaContaPoupanca(numeroConta);
+                    numeroConta = contas.novaContaPoupanca();
+                    System.out.println("Nova conta poupança criada: " + numeroConta);
 
                     break;
                 case 4:   
