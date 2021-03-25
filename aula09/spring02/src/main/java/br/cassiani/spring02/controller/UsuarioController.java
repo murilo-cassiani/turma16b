@@ -1,6 +1,7 @@
 package br.cassiani.spring02.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,8 +19,13 @@ public class UsuarioController {
     private UsuarioRepo repo;
 
     @GetMapping("/id/{id}")
-    public Usuario getUser(@PathVariable int id) {
+    public ResponseEntity<Usuario> getUser(@PathVariable int id) {
         Usuario userEncontrado = repo.findById(id).orElse(null);
-        return userEncontrado;
+
+        if (userEncontrado != null) {
+            return ResponseEntity.ok(userEncontrado);
+        }
+
+        return ResponseEntity.notFound().build();
     }
 }
