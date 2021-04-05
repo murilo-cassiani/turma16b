@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gama Academy - JavaScript</title>
+
+    <!-- Criando componente em JS -->
+    <script>
+        // alert("Sejam todos bem vindos...");
+       
+        /* var empresa = "Gama Academy";
+        var mensagem = "Sejam bem vindo a ";
+        alert(mensagem + empresa); */
+
+        /* var nome_cliente = prompt("Olá, seja bem vindo a Gama Academy, informe o seu nome:");
+        alert("Muito prazer, " + nome_cliente + ", navegue na nossa página"); */
+
+        // Criando uma função em JS
+        function mensagem() {
+            alert("Olá, amig@, seja bem vinde");
+        }
+
+        function validar() {
+            var nome = contato.nome_cliente.value;
+            var email = contato.email_cliente.value;
+
+            if (nome == "") {
+                alert("Preechimento do campo é obrigatório");
+                contato.nome_cliente.focus();
+                return false
+            }
+
+            if (email == "" || email.indexOf('@') == -1) {
+                alert("Preencha o campo email e verifique se está correto")
+                contato.email_cliente.focus();
+                return false
+            }
+
+            alert("Prezad@, " + nome + ", iremos enviar um e-mail pra você. Obrigado")
+        }
+
+    </script>
+</head>
+<body>
+    <!-- <h3>Clique no botão abaixo para ter uma interação</h3>
+    <form>
+        <input type="button" onclick="mensagem()" value="Botão">
+    </form> -->
+
+    <form id="contato">
+        Nome:<input type="text" name="nome_cliente"><br><br>
+        Email:<input type="text" name="email_cliente"><br><br>
+        <input type="button" onclick="return validar()" value="Enviar">
+    </form>
+</body>
+</html>

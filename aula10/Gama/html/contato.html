@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Gama Academy</title>
+
+    <!-- Criando uma chamada de uma biblioteca CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <table border="0" width="100%" class="menu">
+        <tr>
+            <td align="center">
+                <a href="../html/index.html">
+                    <img src="../images/gama.png" width="160" height="36">
+                </a>
+            </td>
+            <td align="right">QUEM SOMOS</td>
+            <td align="right">PARA PESSOAS</td>
+            <td align="right">PARA EMPRESAS</td>
+            <td align="right">CONTATO</td>
+            <td align="right">CONTEÚDOS</td>
+        </tr>
+    </table>
+    <br>
+    <!-- Criando um formulário de consulta na nosa página -->
+    <!-- Tag para criar formulário <form> -->
+    <form id="formulario_contato" method="GET">
+        <!-- Criando uma área de desenvolvimento para os campos do formulário -->
+        <fieldset>
+            <!-- Criando uma legenda no nosso formulário -->
+            <legend>Formulário de Cursos da Gama Academy</legend>
+            <!-- Criando campos no nosso formulário -->
+            <!-- Inserindo um título para o campo com a Tag <label> -->
+            <label>Nome:</label><input type="text" name="nome_cliente" class="campo_nome" required><br><br>
+            <label>Email:</label><input type="email" name="email_cliente" required><br><br>
+            <label>Senha:</label><input type="password" name="senha_cliente" required><br><br>
+            
+            <!-- Criando campos utilizando a tag <radio> -->
+            <label>Gênero:</label>
+            <input type="radio" name="genero_cliente" value="Feminino">Feminino
+            <input type="radio" name="genero_cliente" value="Masculino">Masculino
+            <input type="radio" name="genero_cliente" value="Outros">Outros<br><br>
+            
+            <!-- Criando uma caixa de listagem de cursos como DropDown -->
+            <!-- Para criar o dropdown utilizaremos duas tags <select> <option> -->
+            <label>Qual curso deseja?</label>
+            <select required>
+                <option value="" name="cursos_cliente"></option>
+                <option value="HTML" name="cursos_cliente">HTML</option>
+                <option value="CSS" name="cursos_cliente">CSS</option>
+                <option value="JS" name="cursos_cliente">JavaScript</option>
+                <option value="XML" name="cursos_cliente">XML</option>
+            </select><br><br>
+            
+            <!-- Criando um campo para a escolha do período -->
+            <label>Em qual período?</label>
+            <input type="checkbox" name="periodo_cliente" value="manhã">Manhã
+            <input type="checkbox" name="periodo_cliente" value="tarde">Tarde
+            <input type="checkbox" name="periodo_cliente" value="noite">Noite<br><br>
+            
+            <!-- Criando um campo para escolha da data -->
+            <!-- Utilizar tag <input="date"> -->
+            <label>Data de início desejada:</label>
+            <input type="date" name="data_curso_cliente" required><br><br>
+
+            <!-- Criando um campo de observação -->
+            <label>Mensagem:</label><br>
+            <textarea name="mensagem_cliente" cols="35" rows="3"></textarea><br><br>
+
+            <!-- Criando um campo para anexar comprovante -->
+            <label>Insira um comprovante de residência:</label><br>
+            <input type="file" name="arquivo_cliente" required><br><br>
+            
+            <!-- Criando um botão de envio de dados do formulário -->
+            <input type="submit" value="Enviar" class="botao">
+        </fieldset>
+    </form>
+</body>
+</html>
